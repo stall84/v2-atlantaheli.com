@@ -6,13 +6,15 @@ import { StyledProps } from './styles';
 interface Props extends StyledProps {
   title: string;
   subtitle?: string;
+  none?: boolean;
+  hero?: boolean;
 }
 
-const TitleSection: React.FC<Props> = ({ center, title, subtitle }) => (
-  <Styled.TitleSection>
-    {subtitle && <Styled.SubTitle center={center}>{title}</Styled.SubTitle>}
-    <Styled.Title center={center}>{subtitle}</Styled.Title>
-    <Styled.Separator center={center} />
+const TitleSection: React.FC<Props> = ({ center, hero, none, title, subtitle }) => (
+  <Styled.TitleSection >
+    {subtitle && <Styled.SubTitle hero={hero} center={center}>{subtitle}</Styled.SubTitle>}
+    <Styled.Title hero={hero} center={center}>{title}</Styled.Title>
+    <Styled.Separator none={none} center={center} />
   </Styled.TitleSection>
 );
 

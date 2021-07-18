@@ -1,6 +1,7 @@
 ---
 category: 'services'
-title: 'Web Design'
-icon: 'laptop-code'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+title: 'Helicopter Tours'
+icon: 'helicopter'
+description: 'We offer a wide range of tours, of varying length to fit any budget. Sightsee like royalty! Click to be taken to our tour packages.'
+linkTo: '/tours/'
 ---

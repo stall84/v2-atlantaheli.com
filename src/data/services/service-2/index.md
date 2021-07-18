@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Graphic Design'
-icon: 'draw-polygon'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+title: 'Executive Charter'
+icon: 'plane'
+description: 'We also operate charter services by helicopter or plane. Avoid Hartsfield stress and TSA to your destination of choice.'
 ---
