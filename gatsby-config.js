@@ -3,7 +3,7 @@ module.exports = {
     title: `North Atlanta Executive Air Service`,
     description: `Serving the greater north Atlanta metro providing helicopter charters and memorable tours`,
     author: `Michael Stallings`,
-    attribution: `Saimir Kapaj`
+    attribution: `Special thanks to Saimir Kapaj for the organization of this template`
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -41,8 +41,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-personal-website-starter`,
-        short_name: `starter`,
+        name: `atlantaheli.com`,
+        short_name: `atlheli.com`,
         start_url: `/`,
         background_color: `#81e6d9`,
         theme_color: `#81e6d9`,
