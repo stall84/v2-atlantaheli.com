@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import Loadable from '@loadable/component';
 
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
-import { SectionTitle, ImageSharpFluid } from 'helpers/definitions';
+import { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 const Carousel = Loadable(() => import('components/ui/Carousel'));
 
@@ -21,7 +22,7 @@ interface Testimonial {
       title: string;
       cover: {
         childImageSharp: {
-          fluid: ImageSharpFluid;
+          gatsbyImageData: IGatsbyImageData
         };
       };
     };
@@ -29,34 +30,31 @@ interface Testimonial {
 }
 
 const Testimonials: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
-    query {
-      markdownRemark(frontmatter: { category: { eq: "testimonials section" } }) {
+  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`{
+  markdownRemark(frontmatter: {category: {eq: "testimonials section"}}) {
+    frontmatter {
+      title
+      subtitle
+    }
+  }
+  allMarkdownRemark(filter: {frontmatter: {category: {eq: "testimonials"}}}) {
+    edges {
+      node {
+        id
+        html
         frontmatter {
           title
-          subtitle
-        }
-      }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "testimonials" } } }) {
-        edges {
-          node {
-            id
-            html
-            frontmatter {
-              title
-              cover {
-                childImageSharp {
-                  fluid(maxWidth: 80) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+          cover {
+            childImageSharp {
+              gatsbyImageData(width: 80, layout: CONSTRAINED)
             }
           }
         }
       }
     }
-  `);
+  }
+}
+`);
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
   const testimonials: Testimonial[] = allMarkdownRemark.edges;
@@ -76,7 +74,7 @@ const Testimonials: React.FC = () => {
             return (
               <Styled.Testimonial key={id}>
                 <Styled.Image>
-                  <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                  <GatsbyImage image={cover.childImageSharp.gatsbyImageData} alt={title} />
                 </Styled.Image>
                 <Styled.Title>{title}</Styled.Title>
                 <FormatHtml content={html} />

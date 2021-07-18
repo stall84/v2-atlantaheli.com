@@ -8,6 +8,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-source-sanity`,
+    //   options: {
+    //     projectId: `ua522t17`,
+    //     dataset: `production`
+    //   }
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,6 +43,7 @@ module.exports = {
         ]
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
