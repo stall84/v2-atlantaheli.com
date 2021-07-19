@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Newsletter from 'components/Newsletter';
+import ContactInfo from 'components/ContactInfo';
 
 import 'assets/styles/global.css';
 import GlobalStyles from 'assets/styles/globalStyles';
@@ -38,7 +39,7 @@ const Layout: React.FC<Props> = ({ children }) => {
             transition={{ delay: 0.2 }}
           >
             {children}
-            <Newsletter />
+            <ContactInfo />
             <Footer />
           </motion.div>
         </Styled.Layout>

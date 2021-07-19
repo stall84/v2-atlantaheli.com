@@ -30,11 +30,11 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 768,
               linkImagesToOriginal: false

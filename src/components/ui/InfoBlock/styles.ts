@@ -7,7 +7,7 @@ export interface StyledProps {
 
 export const InfoBlock = styled.div<StyledProps>`
   ${tw`flex flex-col my-4 mx-3 p-4 bg-white rounded-lg border border-gray-300`};
-  ${({ center }) => center && tw`items-center`};
+  ${({ center }) => center && tw`items-center items-center`};
 `;
 
 export const Icon = styled.span`
@@ -25,3 +25,8 @@ export const Title = styled.h3`
 export const Content = styled.p`
   ${tw`mt-1 text-black`};
 `;
+
+export const Link = styled.a<StyledProps>`
+  ${tw`flex flex-col my-4 mx-3 p-4 bg-white rounded-lg border border-gray-300`};
+  ${({ center }) => center && tw`items-center items-center`};
+`
