@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-
-import InfoBlock from 'components/ui/InfoBlock';
+import LinkedInfoBlock from 'components/ui/LinkedInfoBlock';
+// import InfoBlock from 'components/ui/InfoBlock';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import { IconProps } from 'components/ui/Icon';
@@ -83,7 +83,7 @@ const ConctactInfo: React.FC = () => {
 
         return (
           <Styled.ContactInfoItem key={id}>
-            <InfoBlock icon={contact_icon} title={contact_type} content={contact_value} linkTo={contact_link} center />
+            <LinkedInfoBlock icon={contact_icon} title={contact_type} content={contact_value} linkTo={contact_link} center />
           </Styled.ContactInfoItem>
         );
       })}
