@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-
-import InfoBlock from 'components/ui/InfoBlock';
+import LinkedInfoBlock from 'components/ui/LinkedInfoBlock';
+// import InfoBlock from 'components/ui/InfoBlock';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import { IconProps } from 'components/ui/Icon';
@@ -20,9 +20,18 @@ interface Contact {
     };
   };
 }
+interface SanityContact {
+  node: {
+    id: string,
+    contact_type: string;
+    contact_value: string;
+    contact_icon: IconProps;
+    contact_link: string;
+  }
+}
 
 const ConctactInfo: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { markdownRemark, allMarkdownRemark, allSanityContact } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "contact section" } }) {
         frontmatter {
@@ -42,24 +51,39 @@ const ConctactInfo: React.FC = () => {
           }
         }
       }
+      allSanityContact {
+        edges {
+          node {
+            id
+            contact_type
+            contact_value
+            contact_icon
+            contact_link
+          }
+        }
+      }
     }
   `);
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
   const contacts: Contact[] = allMarkdownRemark.edges;
+  const sanityContacts: SanityContact[] = allSanityContact.edges;
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      {contacts.map((item) => {
+      {sanityContacts.map((item) => {
         const {
           id,
-          frontmatter: { title, icon, content }
+          contact_type,
+          contact_value,
+          contact_icon,
+          contact_link
         } = item.node;
 
         return (
           <Styled.ContactInfoItem key={id}>
-            <InfoBlock icon={icon} title={title} content={content} center />
+            <LinkedInfoBlock icon={contact_icon} title={contact_type} content={contact_value} linkTo={contact_link} center />
           </Styled.ContactInfoItem>
         );
       })}

@@ -21,9 +21,18 @@ interface Service {
     };
   };
 }
+interface SanityService {
+  node: {
+    id: string;
+    service_description: string;
+    service_name: string;
+    service_icon: IconProps;
+    service_link: string;
+  }
+}
 
 const Services: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { markdownRemark, allMarkdownRemark, allSanityServices } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "services section" } }) {
         frontmatter {
@@ -44,25 +53,41 @@ const Services: React.FC = () => {
           }
         }
       }
+      allSanityServices {
+        edges {
+          node {
+            id
+            service_description
+            service_icon
+            service_name
+            service_link
+          }
+        }
+      }
     }
   `);
 
+
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
   const services: Service[] = allMarkdownRemark.edges;
+  const sanityservices: SanityService[] = allSanityServices.edges;
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
       <Styled.Services>
-        {services.map((item) => {
+        {sanityservices.map((item) => {
           const {
             id,
-            frontmatter: { title, icon, description, linkTo }
+            service_description,
+            service_icon,
+            service_link,
+            service_name
           } = item.node;
 
           return (
             <Styled.ServiceItem key={id}>
-              <InfoBlock linkTo={linkTo} icon={icon} title={title} content={description} />
+              <InfoBlock linkTo={service_link} icon={service_icon} title={service_name} content={service_description} />
             </Styled.ServiceItem>
           );
         })}
