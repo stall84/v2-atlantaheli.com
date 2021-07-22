@@ -3,24 +3,52 @@ import React from 'react';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import ConctactInfo from 'components/ContactInfo';
+// import TourInfo from 'components/TourInfo';
 
-import { toursQuery } from '../apollo/xola-client';
-import { useQuery, gql } from '@apollo/client';
+import { useEffect, useState } from 'react';
 
 
 
 
 const ToursPage: React.FC = () => {
 
-    const { loading, error, data } = useQuery(toursQuery);
+    const [toursList, setToursList] = useState([]);
+    const [errorMsg, setErrorMsg] = useState('');
+
+    useEffect(() => {
+        const fetchTours = async () => {
+            try {
+                const tours = await fetch(`${process.env.GATSBY_XOLA_SELLER_ENDPOINT}${process.env.GATSBY_XOLA_SELLER_ID}`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-VERSION': '2017-06-10',
+                        'X-API-KEY': `${process.env.GATSBY_XOLA_SELLER_API_KEY}`
+                    }
+                })
+                return tours.json();
+            }
+            catch (error) {
+                setErrorMsg('We had an issue retrieving the laterst tours, give us a call at 678-362-3415 for direct booking!')
+                console.log('Error retrieving list of tours from Xola: ', error);
+            }
+        }
+        fetchTours()
+            .then(response => setToursList(response.data))
+            .catch(error => setErrorMsg(error.message))
+    }, []);
+
+
 
     return (
         <Layout>
             <SEO title="Charters and Tours" />
             <p>This is the Tours Page</p>
-            {loading && <h3>Loading Query...</h3>}
-            {error && <h3>Error: ${error.message}</h3>}
-            {data && console.log(data)}
+            {
+                !toursList && <h1>Loading...</h1>
+            }
+            {
+                toursList && <h1>Success!!</h1>
+            }
             <ConctactInfo />
         </Layout>
     );
