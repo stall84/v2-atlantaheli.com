@@ -11,6 +11,16 @@ interface Props extends Styled.StyledProps {
   linkTo: string;
 }
 
+interface NewProps extends Styled.StyledProps {
+  id: string;
+  name: string;
+  description: string;
+  photoLink?: string;
+  cancellationPolicy?: string;
+  price: number;
+  priceType?: string;
+}
+
 const TourCard: React.FC<Props> = ({ icon, title, content, linkTo, center }) => (
   <Styled.InfoBlock center={center}>
     <Styled.Icon>

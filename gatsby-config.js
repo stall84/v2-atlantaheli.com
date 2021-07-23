@@ -13,12 +13,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-env-variables`,
-      options: {
-        allowList: ['XOLA_SELLER_ID', 'XOLA_SELLER_API_KEY']
-      }
-    },
-    {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: `ua522t17`,

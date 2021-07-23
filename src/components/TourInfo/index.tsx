@@ -1,15 +1,15 @@
-// import React from 'react';
-// import { useStaticQuery, graphql } from 'gatsby';
-// // import LinkedInfoBlock from 'components/ui/LinkedInfoBlock';
-// // import InfoBlock from 'components/ui/InfoBlock';
-// import Container from 'components/ui/Container';
-// import TitleSection from 'components/ui/TitleSection';
-// import { IconProps } from 'components/ui/Icon';
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+// import LinkedInfoBlock from 'components/ui/LinkedInfoBlock';
+// import InfoBlock from 'components/ui/InfoBlock';
+import Container from 'components/ui/Container';
+import TitleSection from 'components/ui/TitleSection';
+import { IconProps } from 'components/ui/Icon';
 
 
-// import { SectionTitle } from 'helpers/definitions';
+import { SectionTitle } from 'helpers/definitions';
 
-// import * as Styled from './styles';
+import * as Styled from './styles';
 
 // interface Contact {
 //   node: {
@@ -30,22 +30,33 @@
 //     contact_link: string;
 //   }
 // }
+interface XolaExperienceArray {
+  toursArray: [any];
+}
+
+interface XolaExperience {
+  id: string;
+  name: string;
+  description: string;
+  photoLink?: string;
+  cancellationPolicy?: string;
+  price: number;
+  priceType?: string;
+}
 
 
-// const TourInfo: React.FC = () => {
+const TourInfo: React.FC<XolaExperienceArray> = ({ toursArray }) => {
 
-//   // const { loading, error, data } = useQuery(toursQuery);
-//   // const toursArray = data.experiences.data;
 
-//   return (
-//     <Container section>
-//       <TitleSection title="Tours and Charters" subtitle="Our best packages" center />
-//       {/* {
-//         loading && <HourGlass />
-//       } */}
+  return (
+    <Container section>
+      <TitleSection title="Tours and Charters" subtitle="Our best packages" center />
+      {/* {
+        loading && <HourGlass />
+      } */}
 
-//     </Container>
-//   );
-// };
+    </Container>
+  );
+};
 
-// export default TourInfo;
+export default TourInfo;

@@ -6,14 +6,22 @@ import ConctactInfo from 'components/ContactInfo';
 // import TourInfo from 'components/TourInfo';
 
 import { useEffect, useState } from 'react';
+import TourInfo from 'components/TourInfo';
 
 
+interface XolaExperienceArray {
+    toursArray: [any];
+}
 
 
 const ToursPage: React.FC = () => {
 
     const [toursList, setToursList] = useState([]);
     const [errorMsg, setErrorMsg] = useState('');
+
+    /**
+     * @todo Create an object structure for toursList state and set the state in the useEffect fetch below with ONLY the props we want (name, desc, price, etc)
+     */
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -47,8 +55,12 @@ const ToursPage: React.FC = () => {
                 !toursList && <h1>Loading...</h1>
             }
             {
+                errorMsg && <h1>{errorMsg}</h1>
+            }
+            {
                 toursList && <h1>Success!!</h1>
             }
+            {/* <TourInfo /> */}
             <ConctactInfo />
         </Layout>
     );
