@@ -10,7 +10,7 @@ import TourInfo from 'components/TourInfo';
 
 
 interface XolaExperienceArray {
-    toursArray: [any];
+    toursArray: [] | [any] | never[];
 }
 
 
@@ -19,9 +19,6 @@ const ToursPage: React.FC = () => {
     const [toursList, setToursList] = useState([]);
     const [errorMsg, setErrorMsg] = useState('');
 
-    /**
-     * @todo Create an object structure for toursList state and set the state in the useEffect fetch below with ONLY the props we want (name, desc, price, etc)
-     */
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -58,9 +55,9 @@ const ToursPage: React.FC = () => {
                 errorMsg && <h1>{errorMsg}</h1>
             }
             {
-                toursList && <h1>Success!!</h1>
+                toursList && <TourInfo toursArray={toursList} />
             }
-            {/* <TourInfo /> */}
+
             <ConctactInfo />
         </Layout>
     );

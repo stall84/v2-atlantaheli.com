@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 // import InfoBlock from 'components/ui/InfoBlock';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
+import TourCard from 'components/ui/TourCard';
 import { IconProps } from 'components/ui/Icon';
 
 
@@ -31,17 +32,7 @@ import * as Styled from './styles';
 //   }
 // }
 interface XolaExperienceArray {
-  toursArray: [any];
-}
-
-interface XolaExperience {
-  id: string;
-  name: string;
-  description: string;
-  photoLink?: string;
-  cancellationPolicy?: string;
-  price: number;
-  priceType?: string;
+  toursArray: [] | [any] | never[];
 }
 
 
@@ -51,10 +42,15 @@ const TourInfo: React.FC<XolaExperienceArray> = ({ toursArray }) => {
   return (
     <Container section>
       <TitleSection title="Tours and Charters" subtitle="Our best packages" center />
-      {/* {
-        loading && <HourGlass />
-      } */}
-
+      {
+        toursArray.map((tour) => {
+          return (
+            <Styled.TourInfoItem>
+              <TourCard id={tour.id} name={tour.name} description={tour.desc} price={tour.price} />
+            </Styled.TourInfoItem>
+          );
+        })
+      }
     </Container>
   );
 };

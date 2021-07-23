@@ -2,16 +2,26 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Icon, { IconProps } from 'components/ui/Icon';
 import * as Styled from './styles';
+import Button from '../Button';
 
+// interface Props extends Styled.StyledProps {
+//   title: string;
+//   content: React.ReactNode;
+//   icon: IconProps;
+//   linkTo: string;
+// }
 
-interface Props extends Styled.StyledProps {
-  title: string;
-  content: React.ReactNode;
-  icon: IconProps;
-  linkTo: string;
-}
+// interface NewProps extends Styled.StyledProps {
+//   id: string;
+//   name: string;
+//   description: string;
+//   photoLink?: string;
+//   cancellationPolicy?: string;
+//   price: number;
+//   priceType?: string;
+// }
 
-interface NewProps extends Styled.StyledProps {
+interface XolaExperience extends Styled.StyledProps {
   id: string;
   name: string;
   description: string;
@@ -21,19 +31,22 @@ interface NewProps extends Styled.StyledProps {
   priceType?: string;
 }
 
-const TourCard: React.FC<Props> = ({ icon, title, content, linkTo, center }) => (
-  <Styled.InfoBlock center={center}>
-    <Styled.Icon>
+
+const TourCard: React.FC<XolaExperience> = ({ id, center, name, description, price, priceType, photoLink, cancellationPolicy }) => (
+  <Styled.TourCard center={center}>
+    {/* <Styled.Icon>
       <Icon icon={icon} />
-    </Styled.Icon>
+    </Styled.Icon> */}
     <Styled.Wrapper center={center}>
-      <Link to={linkTo}>
-        <Styled.Title>{title}</Styled.Title>
-        <Styled.Content>{content}</Styled.Content>
+      <Link to={`https://checkout.xola.com/index.html#seller/${process.env.GATSBY_XOLA_SELLER_ID}/experiences/${id}?openExternal=true`}>
+        <Styled.Title>{name}</Styled.Title>
+        <Styled.Content>{description}</Styled.Content>
+        <h3>${price} - per person</h3>
+        <Button>Click to book!</Button>
       </Link>
     </Styled.Wrapper>
 
-  </Styled.InfoBlock>
+  </Styled.TourCard>
 );
 
 export default TourCard;
