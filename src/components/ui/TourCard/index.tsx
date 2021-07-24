@@ -38,12 +38,12 @@ const TourCard: React.FC<XolaExperience> = ({ id, center, name, description, pri
       <Icon icon={icon} />
     </Styled.Icon> */}
     <Styled.Wrapper center={center}>
-      <Link to={`https://checkout.xola.com/index.html#seller/${process.env.GATSBY_XOLA_SELLER_ID}/experiences/${id}?openExternal=true`}>
+      <Styled.Link center target="_blank" href={`https://checkout.xola.com/index.html#seller/${process.env.GATSBY_XOLA_SELLER_ID}/experiences/${id}?openExternal=true`}>
         <Styled.Title>{name}</Styled.Title>
         <Styled.Content>{description}</Styled.Content>
         <h3>${price} - per person</h3>
         <Button>Click to book!</Button>
-      </Link>
+      </Styled.Link>
     </Styled.Wrapper>
 
   </Styled.TourCard>

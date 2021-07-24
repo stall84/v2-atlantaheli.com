@@ -47,7 +47,6 @@ const ToursPage: React.FC = () => {
     return (
         <Layout>
             <SEO title="Charters and Tours" />
-            <p>This is the Tours Page</p>
             {
                 !toursList && <h1>Loading...</h1>
             }
