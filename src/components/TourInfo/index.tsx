@@ -41,12 +41,12 @@ const TourInfo: React.FC<XolaExperienceArray> = ({ toursArray }) => {
 
   return (
     <Container section>
-      <TitleSection title="Tours and Charters" subtitle="Our best packages" center />
+      <TitleSection title="Tours and Charters" subtitle="Our best packages" hero center />
       {
         toursArray.map((tour) => {
           return (
             <Styled.TourInfoItem>
-              <TourCard id={tour.id} name={tour.name} description={tour.desc} price={tour.price} />
+              <TourCard id={tour.id} name={tour.name} description={tour.desc} price={tour.price} photoLink={tour.photo.id} />
             </Styled.TourInfoItem>
           );
         })

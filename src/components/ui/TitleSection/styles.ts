@@ -20,7 +20,7 @@ export const Title = styled.h2<StyledProps>`
 export const SubTitle = styled.h4<StyledProps>`
   ${tw`text-xs text-indigo-600 w-full text-left`};
   ${({ center }) => center && tw`text-center`};
-  ${({ hero }) => hero && tw`sm:text-lg text-white sm:mb-8`};
+  ${({ hero }) => hero && tw`sm:text-lg text-teal-400 sm:mb-8`};
 `;
 
 export const Separator = styled.h2<StyledProps>`
