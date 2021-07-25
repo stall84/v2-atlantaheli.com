@@ -25,7 +25,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       }
     }
   `);
-
+  console.log('ENV KEYS: ', process.env.XOLA_SELLER_API_KEY)
   return (
     <>
       <GlobalStyles />

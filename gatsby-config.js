@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `North Atlanta Executive Air Service`,
@@ -60,14 +64,13 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-tailwindcss`,
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        purgeOnly: [`src/assets/styles/global.css`]
-      }
-    }
+    `gatsby-plugin-postcss`
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     tailwind: true,
+    //     purgeOnly: [`src/assets/styles/global.css`]
+    //   }
+    // }
   ]
 };

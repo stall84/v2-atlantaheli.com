@@ -12,5 +12,5 @@ export const Content = styled.p`
 `;
 
 export const Title = styled.h1`
-  ${tw`uppercase mb-5 text-xl font-bold w-full text-center`};
+  ${tw`uppercase mb-5 text-2xl font-bold w-full text-center`};
 `;

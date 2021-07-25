@@ -74,7 +74,7 @@ const Services: React.FC = () => {
 
   return (
     <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} hero center />
       <Styled.Services>
         {sanityservices.map((item) => {
           const {
