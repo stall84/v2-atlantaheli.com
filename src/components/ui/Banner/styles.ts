@@ -3,8 +3,8 @@ import tw from 'tailwind.macro';
 import bg from '../../../assets/images/atl-bg-1-2.jpeg';
 
 export const Banner = styled.section`
-  ${tw`bg-cover bg-no-repeat bg-top bg-fixed border-b border-indigo-100`};
-  background-image: url(${bg});
+  ${tw`sm:h-2/5 bg-cover bg-no-repeat bg-top bg-fixed border-b border-indigo-100`};
+  /* background-image: url(${bg}); */
 `;
 
 export const Content = styled.p`
