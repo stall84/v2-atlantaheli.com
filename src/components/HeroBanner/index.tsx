@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Banner from 'components/ui/Banner';
 
 import { SectionTitle } from 'helpers/definitions';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 
 interface SectionHeroBanner extends SectionTitle {
   content: string;
@@ -15,7 +15,7 @@ interface SectionHeroBanner extends SectionTitle {
 
 
 const HeroBanner: React.FC = () => {
-  const { markdownRemark, bgImage } = useStaticQuery(graphql`
+  const { markdownRemark, bgImage, sanityBG } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
         frontmatter {
@@ -31,15 +31,23 @@ const HeroBanner: React.FC = () => {
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
+      sanityBG: sanityImages {
+        bgImage {
+          asset {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
+        }
+      }
     }
   `);
 
   const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
   const backgroundImage = bgImage.childImageSharp.gatsbyImageData;
-  console.log('BG: ', backgroundImage)
+  const sanityBackground = sanityBG.bgImage.asset.gatsbyImageData;
+  console.log('Sanity BG: ', sanityBackground);
   return (
     <>
-      <GatsbyImage image={backgroundImage} alt="Backgroun Image" />
+      <GatsbyImage image={sanityBackground} alt="Background Image" />
       <Banner
         title={heroBanner.title}
         subtitle={heroBanner.subtitle}
