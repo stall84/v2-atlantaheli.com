@@ -51,28 +51,29 @@ const HeroBanner: React.FC = () => {
   const sanityBackground = convertToBgImage(sanityBG.bgImage.asset.gatsbyImageData);
   console.log('Sanity BG: ', typeof sanityBackground);
   return (
-    <div>
-      <BackgroundImage
-        Tag='section'
-        {...sanityBackground}
-        preserveStackingContext
-      >
-        <Banner
-          title={heroBanner.title}
-          subtitle={heroBanner.subtitle}
-          content={heroBanner.content}
-          linkTo={heroBanner.linkTo}
-          linkText={heroBanner.linkText}
-          bgImg={backgroundImage}
-        />
-      </BackgroundImage>
-    </div>
+
+    <BackgroundImage
+      Tag='section'
+      {...sanityBackground}
+      preserveStackingContext
+      className="heroBanner"
+    >
+      <Banner
+        title={heroBanner.title}
+        subtitle={heroBanner.subtitle}
+        content={heroBanner.content}
+        linkTo={heroBanner.linkTo}
+        linkText={heroBanner.linkText}
+        bgImg={backgroundImage}
+      />
+    </BackgroundImage>
+
   );
 };
 
 const StyledHeroBanner = styled(HeroBanner)`
-height: 500px;
-${tw`min-w-full sm:min-h-3/4`};
+min-height: 500px;
+
 
 `;
 export default StyledHeroBanner;

@@ -11,7 +11,7 @@ export const Button = motion.custom(styled.button<StyledProps>`
   outline: none !important;
   ${tw`py-2 px-8 rounded-full border border-teal-300 text-indigo-900`};
 
-  ${({ primary }) => (primary ? tw`bg-teal-300` : tw`text-indigo-600`)};
+  ${({ primary }) => (primary ? tw`bg-teal-100` : tw`text-indigo-600`)};
 
   ${({ block }) => block && tw`w-full`};
 `);

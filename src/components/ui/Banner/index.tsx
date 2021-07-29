@@ -17,18 +17,15 @@ interface Props {
 }
 
 const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText, bgImg }) => (
-  <>
-    {/* <StaticImage src={bgImg} alt="background image of Atlanta with helicopters" /> */}
-    <Styled.Banner>
-      <Container section>
-        <TitleSection title={title} subtitle={subtitle} hero none center />
-        <Styled.Content>{content}</Styled.Content>
-        <Link to={linkTo}>
-          <Button primary>{linkText}</Button>
-        </Link>
-      </Container>
-    </Styled.Banner>
-  </>
+  <Styled.Banner>
+    <Container section>
+      <Styled.Title>{title}</Styled.Title>
+      <Styled.Content>{content}</Styled.Content>
+      <Link to={linkTo}>
+        <Button primary>{linkText}</Button>
+      </Link>
+    </Container>
+  </Styled.Banner>
 );
 
 export default Banner;
