@@ -5,6 +5,11 @@ import Banner from 'components/ui/Banner';
 
 import { SectionTitle } from 'helpers/definitions';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
+import BackgroundImage from 'gatsby-background-image';
+
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
 
 interface SectionHeroBanner extends SectionTitle {
   content: string;
@@ -43,21 +48,31 @@ const HeroBanner: React.FC = () => {
 
   const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
   const backgroundImage = bgImage.childImageSharp.gatsbyImageData;
-  const sanityBackground = sanityBG.bgImage.asset.gatsbyImageData;
-  console.log('Sanity BG: ', sanityBackground);
+  const sanityBackground = convertToBgImage(sanityBG.bgImage.asset.gatsbyImageData);
+  console.log('Sanity BG: ', typeof sanityBackground);
   return (
-    <>
-      <GatsbyImage image={sanityBackground} alt="Background Image" />
-      <Banner
-        title={heroBanner.title}
-        subtitle={heroBanner.subtitle}
-        content={heroBanner.content}
-        linkTo={heroBanner.linkTo}
-        linkText={heroBanner.linkText}
-        bgImg={backgroundImage}
-      />
-    </>
+    <div>
+      <BackgroundImage
+        Tag='section'
+        {...sanityBackground}
+        preserveStackingContext
+      >
+        <Banner
+          title={heroBanner.title}
+          subtitle={heroBanner.subtitle}
+          content={heroBanner.content}
+          linkTo={heroBanner.linkTo}
+          linkText={heroBanner.linkText}
+          bgImg={backgroundImage}
+        />
+      </BackgroundImage>
+    </div>
   );
 };
 
-export default HeroBanner;
+const StyledHeroBanner = styled(HeroBanner)`
+height: 500px;
+${tw`min-w-full sm:min-h-3/4`};
+
+`;
+export default StyledHeroBanner;
