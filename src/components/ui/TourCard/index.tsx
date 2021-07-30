@@ -40,7 +40,7 @@ const TourCard: React.FC<XolaExperience> = ({ id, center, name, description, pri
         <Styled.Title>{name}</Styled.Title>
         <Styled.Content>{description}</Styled.Content>
         <Styled.Wrapper topPad>
-          <h3>${price} - per person</h3>
+          <Styled.h3>${price} - per person</Styled.h3>
           <Button>Click to book!</Button>
         </Styled.Wrapper>
       </Styled.Link>

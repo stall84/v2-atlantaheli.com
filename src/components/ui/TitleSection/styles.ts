@@ -18,7 +18,7 @@ export const Title = styled.h2<StyledProps>`
 `;
 
 export const SubTitle = styled.h4<StyledProps>`
-  ${tw`text-xs text-indigo-600 w-full text-left`};
+  ${tw`text-xs text-lightRed w-full text-left`};
   ${({ center }) => center && tw`text-center`};
   ${({ hero }) => hero && tw`sm:text-lg text-indigo sm:mb-8`};
   /* text-shadow: -0.35px -0.35px 0 #3c366b, 0.35px -0.35px 0 #3c366b, -0.35px 0.35px 0 #3c366b, 0.35px 0.35px 0 #3c366b; */
@@ -31,11 +31,11 @@ export const Separator = styled.h2<StyledProps>`
 
   &:before {
     content: '';
-    ${tw`bg-indigo-500 h-full w-px absolute left-0`};
+    ${tw`bg-red h-full w-px absolute left-0`};
   }
 
   &:after {
     content: '';
-    ${tw`bg-teal-400 h-6 w-px absolute ml-1`};
+    ${tw`bg-black h-6 w-px absolute ml-1`};
   }
 `;

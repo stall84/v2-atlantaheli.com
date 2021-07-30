@@ -32,17 +32,11 @@ const IndexPage: React.FC = () => {
   return (
     <Layout>
       <SEO title="North Atlanta Executive Air Service" />
-      {/* <BackgroundImage
-        Tag='section'
-        {...sanityBackground}
-        preserveStackingContext
-      > */}
 
       <HeroBanner />
-      {/* </BackgroundImage> */}
       <Services />
       <hr />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <ConctactInfo />
     </Layout>
   );

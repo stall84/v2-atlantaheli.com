@@ -11,7 +11,7 @@ export const InfoBlock = styled.div<StyledProps>`
 `;
 
 export const Icon = styled.span`
-  ${tw`flex items-center justify-center w-10 h-10 text-indigo-500 border border-teal-400 rounded-full mb-2`};
+  ${tw`flex items-center justify-center w-10 h-10 text-black border border-lightRed rounded-full mb-2`};
 `;
 
 export const Wrapper = styled.div<StyledProps>`
@@ -19,7 +19,7 @@ export const Wrapper = styled.div<StyledProps>`
 `;
 
 export const Title = styled.h3`
-  ${tw`text-md mt-1 font-semibold`};
+  ${tw`text-md mt-1 text-red font-semibold`};
 `;
 
 export const Content = styled.p`
