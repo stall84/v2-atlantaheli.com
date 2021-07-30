@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import bg from '../../../assets/images/atl-bg-1-2.jpeg';
+
 
 export const Banner = styled.section`
-  ${tw`bg-cover bg-no-repeat bg-top bg-fixed border-b border-indigo-100`};
-  background-image: url(${bg});
+  ${tw`flex flex-col justify-center h-full border-b border-indigo-100`};
 `;
 
 export const Content = styled.p`
@@ -12,5 +11,5 @@ export const Content = styled.p`
 `;
 
 export const Title = styled.h1`
-  ${tw`uppercase mb-5 text-2xl font-bold w-full text-center`};
+  ${tw`uppercase mb-5 sm:text-3xl text-white w-full text-center`};
 `;

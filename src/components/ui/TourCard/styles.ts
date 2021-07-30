@@ -22,7 +22,7 @@ export const Wrapper = styled.div<StyledProps>`
 `;
 
 export const Title = styled.h3`
-  ${tw`text-md mt-1 font-semibold text-center`};
+  ${tw`text-md text-red mt-1 font-semibold text-center`};
 `;
 
 export const Content = styled.p`
@@ -32,4 +32,10 @@ export const Content = styled.p`
 export const Link = styled.a<StyledProps>`
   ${tw`flex flex-col my-4 mx-3 p-4 bg-white rounded-lg border border-gray-300`};
   ${({ center }) => center && tw`items-center items-center`};
+  Button {
+    ${tw`hover:bg-lightRed`}
+  }
 `
+export const h3 = styled.h3`
+  ${tw`text-red`}
+`;

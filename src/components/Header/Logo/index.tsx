@@ -12,9 +12,9 @@ const Logo: React.FC = () => {
       title
     }
   }
-  placeholderImage: file(relativePath: {eq: "profile.jpeg"}) {
+  placeholderImage: file(relativePath: {eq: "logov1.png"}) {
     childImageSharp {
-      gatsbyImageData(width: 80, layout: CONSTRAINED)
+      gatsbyImageData(width: 474, layout: CONSTRAINED)
     }
   }
 }
