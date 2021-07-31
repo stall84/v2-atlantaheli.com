@@ -7,7 +7,7 @@ export interface StyledProps {
 }
 
 export const TourCard = styled.div<StyledProps>`
-  ${tw`flex flex-col my-4 mx-3 p-2 bg-white rounded-lg border border-gray-300`};
+  ${tw`flex flex-col my-4 mx-3 p-2 bg-white rounded-lg border border-gray-300 hover:border- hover:bg-offWhite`};
   ${({ center }) => center && tw`items-center items-center`};
 `;
 
@@ -22,7 +22,7 @@ export const Wrapper = styled.div<StyledProps>`
 `;
 
 export const Title = styled.h3`
-  ${tw`text-md text-red mt-1 font-semibold text-center`};
+  ${tw`sm:text-xl text-red mt-1 font-semibold text-center`};
 `;
 
 export const Content = styled.p`
@@ -37,5 +37,5 @@ export const Link = styled.a<StyledProps>`
   }
 `
 export const h3 = styled.h3`
-  ${tw`text-red`}
+  ${tw`text-lightRed sm:text-xl font-semibold hover:text-red`}
 `;

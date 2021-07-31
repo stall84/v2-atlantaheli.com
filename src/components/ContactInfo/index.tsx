@@ -5,6 +5,7 @@ import LinkedInfoBlock from 'components/ui/LinkedInfoBlock';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import { IconProps } from 'components/ui/Icon';
+import { motion } from 'framer-motion';
 
 import { SectionTitle } from 'helpers/definitions';
 
@@ -83,7 +84,9 @@ const ConctactInfo: React.FC = () => {
 
         return (
           <Styled.ContactInfoItem key={id}>
-            <LinkedInfoBlock icon={contact_icon} title={contact_type} content={contact_value} linkTo={contact_link} center />
+            <motion.div whileHover={{ scale: 1.10 }} whileTap={{ scale: 1.05 }} >
+              <LinkedInfoBlock icon={contact_icon} title={contact_type} content={contact_value} linkTo={contact_link} center />
+            </motion.div>
           </Styled.ContactInfoItem>
         );
       })}

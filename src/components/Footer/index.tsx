@@ -9,7 +9,7 @@ const Footer: React.FC = () => (
     <Container>
       <Styled.Links>
         <Styled.Link href="/" rel="noreferrer noopener" target="_blank">
-          GitHub
+          Instagram
         </Styled.Link>
         <Styled.Link
           href="https://github.com/SaimirKapaj/gatsby-markdown-typescript-personal-website"
@@ -19,7 +19,7 @@ const Footer: React.FC = () => (
           Twitter
         </Styled.Link>
         <Styled.Link href="/" rel="noreferrer noopener" target="_blank">
-          Behance
+          Facebook
         </Styled.Link>
       </Styled.Links>
     </Container>

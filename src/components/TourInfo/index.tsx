@@ -37,8 +37,11 @@ interface XolaExperienceArray {
 
 
 const TourInfo: React.FC<XolaExperienceArray> = ({ toursArray }) => {
+  console.log(toursArray);
 
+  const orderedTours = toursArray.sort((a, b) => a.price - b.price);
 
+  console.log('OrderedTours: ', orderedTours);
   return (
     <Container section>
       <TitleSection title="Tours and Charters" subtitle="Our best packages" hero center />

@@ -5,7 +5,7 @@ import InfoBlock from 'components/ui/InfoBlock';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import { IconProps } from 'components/ui/Icon';
-
+import { motion } from 'framer-motion';
 import { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
@@ -87,7 +87,9 @@ const Services: React.FC = () => {
 
           return (
             <Styled.ServiceItem key={id}>
-              <InfoBlock linkTo={service_link} icon={service_icon} title={service_name} content={service_description} />
+              <motion.div whileHover={{ scale: 1.10 }} whileTap={{ scale: 1.05 }} >
+                <InfoBlock linkTo={service_link} icon={service_icon} title={service_name} content={service_description} />
+              </motion.div>
             </Styled.ServiceItem>
           );
         })}
