@@ -36,6 +36,9 @@ export const Link = styled.a<StyledProps>`
     ${tw`hover:bg-lightRed`}
   }
 `
+export const priceDiv = styled.div`
+  ${tw`mb-3 p-2 border border-red rounded-md`}
+`
 export const h3 = styled.h3`
-  ${tw`text-lightRed sm:text-xl font-semibold hover:text-red`}
+  ${tw`text-lightRed text-xl font-semibold hover:text-red`}
 `;
