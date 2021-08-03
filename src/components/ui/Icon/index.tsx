@@ -11,12 +11,23 @@ import {
   faPhone,
   faPaperPlane,
   faHelicopter,
-  faPlane
+  faPlane,
+  faWineBottle,
+  faWineGlassAlt,
+  faUtensils,
+  faGraduationCap,
+  faSchool,
+  faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
 /* add any additional icon to the library */
-library.add(fab, faLaptopCode, faDrawPolygon, faEdit, faEdit, faBullhorn, faMapMarkerAlt, faPhone, faPaperPlane, faHelicopter, faPlane);
+library.add(fab, faLaptopCode,
+  faDrawPolygon, faEdit, faEdit,
+  faBullhorn, faMapMarkerAlt, faPhone,
+  faPaperPlane, faHelicopter, faPlane,
+  faWineBottle, faWineGlassAlt, faUtensils,
+  faGraduationCap, faSchool, faCalendarCheck);
 
 export type IconProps = FontAwesomeIconProps['icon'];
 
