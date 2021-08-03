@@ -48,6 +48,7 @@ const TourInfo: React.FC<XolaExperienceArray> = ({ toursArray }) => {
       <Styled.h3>
         All tours listed below are priced <strong>per person</strong>. <br />
         All charters are priced <strong>per hour</strong><br />
+        All winery/chophouse excursions are total price <strong>up to 3 people</strong><br />
         Find the perfect fit of time and destinations for you below!
       </Styled.h3>
       {
