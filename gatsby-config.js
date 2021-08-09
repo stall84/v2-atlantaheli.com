@@ -5,9 +5,10 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `North Atlanta Executive Air Service`,
-    description: `Serving the greater north Atlanta metro providing helicopter charters and memorable tours`,
+    description: `Specializing in helicopter charter, tours, and management in the greater Atlanta, GA region. Offering several tours and winery excursions to fit any budget.`,
     author: `Michael Stallings`,
-    attribution: `Special thanks to Saimir Kapaj for the organization of this template`
+    owner: `Alister Pereira`,
+    location: `Atlanta, GA`
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -65,12 +66,5 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     tailwind: true,
-    //     purgeOnly: [`src/assets/styles/global.css`]
-    //   }
-    // }
   ]
 };

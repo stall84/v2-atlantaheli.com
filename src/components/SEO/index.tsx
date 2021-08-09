@@ -4,13 +4,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 type Meta =
   | {
-      name: string;
-      content: any;
-    }
+    name: string;
+    content: any;
+  }
   | {
-      property: string;
-      content: any;
-    };
+    property: string;
+    content: any;
+  };
 
 interface Props {
   description?: string;
@@ -28,6 +28,8 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
             title
             description
             author
+            owner
+            location
           }
         }
       }
@@ -47,6 +49,18 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         {
           name: `description`,
           content: metaDescription
+        },
+        {
+          name: `owner`,
+          content: site.siteMetadata.owner
+        },
+        {
+          name: `author`,
+          content: site.siteMetadata.author
+        },
+        {
+          name: `location`,
+          content: site.siteMetadata.location
         },
         {
           property: `og:title`,

@@ -15,20 +15,6 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const IndexPage: React.FC = () => {
 
-  //   const { sanityBG } = useStaticQuery(graphql`
-  //   query {
-  //     sanityBG: sanityImages {
-  //         bgImage {
-  //           asset {
-  //             gatsbyImageData(layout: FULL_WIDTH)
-  //           }
-  //         }
-  //       }
-  //     }
-  // `)
-
-  //   const sanityBackground = convertToBgImage(sanityBG.bgImage.asset.gatsbyImageData);
-
   return (
     <Layout>
       <SEO title="North Atlanta Executive Air Service" />

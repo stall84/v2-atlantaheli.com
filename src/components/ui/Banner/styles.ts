@@ -3,7 +3,7 @@ import tw from 'tailwind.macro';
 
 
 export const Banner = styled.section`
-  ${tw`flex flex-col justify-center h-full border-b border-indigo-100`};
+  ${tw`flex flex-col justify-start h-full border-b border-indigo-100`};
 `;
 
 export const Content = styled.p`
@@ -11,5 +11,5 @@ export const Content = styled.p`
 `;
 
 export const Title = styled.h1`
-  ${tw`uppercase mb-5 sm:text-3xl text-white w-full text-center`};
+  ${tw`uppercase mb-5 sm:text-3xl text-black w-full text-center`};
 `;
