@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `North Atlanta Executive Air Service`,
-    description: `Specializing in helicopter charter, tours, and management in the greater Atlanta, GA region. Offering several tours and winery excursions to fit any budget.`,
+    description: `Specializing in helicopter tours, charters, and management in the greater Atlanta, GA region. Offering several tours and winery excursions to fit any budget.`,
     author: `Michael Stallings`,
     owner: `Alister Pereira`,
     location: `Atlanta, GA`
