@@ -14,6 +14,12 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [`UA-204964303-1`]
+      }
+    },
+    {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: `ua522t17`,
