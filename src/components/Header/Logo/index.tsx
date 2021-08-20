@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 
 import * as Styled from './styles';
 
@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
       title
     }
   }
-  placeholderImage: file(relativePath: {eq: "logov1.png"}) {
+  placeholderImage: file(relativePath: {eq: "logoV2.png"}) {
     childImageSharp {
       gatsbyImageData(width: 474, layout: CONSTRAINED)
     }
@@ -26,7 +26,7 @@ const Logo: React.FC = () => {
   return (
     <Styled.Logo to="/">
       <Styled.Image>
-        <GatsbyImage image={logoImage} alt={logoTitle} />
+        <StaticImage className="logoSpacing" src="../../../assets/images/logoV2-mod2.png" alt="Atlanta Helicopters Logo" placeholder="blurred" width={300} />
       </Styled.Image>
       <Styled.Text>{logoTitle}</Styled.Text>
     </Styled.Logo>

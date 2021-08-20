@@ -3,17 +3,17 @@ import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 
 export const Logo = styled(Link)`
-  ${tw`flex items-center mr-auto text-black hover:text-indigo-900`};
+  ${tw`flex items-center sm:w-auto mr-auto text-black hover:text-indigo-900`};
 `;
 
 export const Text = styled.h1`
-  ${tw`sm:flex hidden sm:text-black sm:text-lg`};
+  ${tw`sm:flex sm:flex-none sm:mt-1 sm:ml-8 hidden sm:text-red sm:text-xl`};
 `;
 
 export const Image = styled.figure`
-  ${tw`w-mobile h-mobile sm:w-32 sm:h-16 mr-2 sm:mt-1 rounded-full`};
+  ${tw`-ml-8 mr-2 py-1 sm:-ml-6 sm:py-0 sm:w-3/4 sm:h-20`};
 
-  img {
+  /* img {
     ${tw`h-full w-full rounded-full border border-red`};
-  }
+  } */
 `;

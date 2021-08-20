@@ -7,9 +7,9 @@ export const Banner = styled.section`
 `;
 
 export const Content = styled.p`
-  ${tw`mb-8`};
+  ${tw`text-red text-sm sm:text-base mb-1 sm:mb-8`};
 `;
 
 export const Title = styled.h1`
-  ${tw`uppercase mb-5 sm:text-3xl text-black w-full text-center`};
+  ${tw`uppercase mb-1 sm:mb-5 text-lg sm:text-3xl text-black w-full text-center`};
 `;

@@ -9,7 +9,7 @@ export interface StyledProps {
 
 export const Button = motion.custom(styled.button<StyledProps>`
   outline: none !important;
-  ${tw`py-2 px-8 rounded-full border border-black text-black hover:bg-lightRed`};
+  ${tw`py-1 px-4 sm:py-2 sm:px-8 rounded-full border border-black text-black hover:bg-lightRed`};
 
   ${({ primary }) => (primary ? tw`bg-offWhite` : tw`text-black`)};
 

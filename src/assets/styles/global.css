@@ -6,6 +6,11 @@
 
 @tailwind utilities;
 
+.logoSpacing {
+  margin-top: -0.36rem;
+  margin-bottom: 0.36rem;
+}
+
 .heroBanner {
   height: 90vh;
 }
