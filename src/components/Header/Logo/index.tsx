@@ -6,22 +6,22 @@ import * as Styled from './styles';
 
 
 const Logo: React.FC = () => {
-  const { site, placeholderImage } = useStaticQuery(graphql`{
+  const { site } = useStaticQuery(graphql`{
   site {
     siteMetadata {
       title
     }
   }
-  placeholderImage: file(relativePath: {eq: "logoV2.png"}) {
-    childImageSharp {
-      gatsbyImageData(width: 474, layout: CONSTRAINED)
-    }
-  }
+  # placeholderImage: file(relativePath: {eq: "logoV2.png"}) {
+  #   childImageSharp {
+  #     gatsbyImageData(width: 474, layout: CONSTRAINED)
+  #   }
+  # }
 }
 `);
 
   const logoTitle: string = site.siteMetadata.title;
-  const logoImage = placeholderImage.childImageSharp.gatsbyImageData;
+  // const logoImage = placeholderImage.childImageSharp.gatsbyImageData;
 
   return (
     <Styled.Logo to="/">

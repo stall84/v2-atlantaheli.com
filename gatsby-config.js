@@ -62,8 +62,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `atlantaheli.com`,
-        short_name: `atlheli.com`,
+        name: `www.atlantaheli.com`,
+        short_name: `atlantaheli.com`,
         start_url: `/`,
         background_color: `#81e6d9`,
         theme_color: `#81e6d9`,
