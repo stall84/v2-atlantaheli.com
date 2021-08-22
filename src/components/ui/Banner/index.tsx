@@ -13,7 +13,7 @@ interface Props {
   content: React.ReactNode;
   linkTo: string;
   linkText: string;
-  bgImg: string;
+  bgImg?: string;
 }
 
 const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText, bgImg }) => (

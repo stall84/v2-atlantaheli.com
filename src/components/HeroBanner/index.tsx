@@ -20,7 +20,7 @@ interface SectionHeroBanner extends SectionTitle {
 
 
 const HeroBanner: React.FC = () => {
-  const { markdownRemark, bgImage, sanityBG } = useStaticQuery(graphql`
+  const { markdownRemark, bgImage, sanityBG, sanityBnr } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
         frontmatter {
@@ -36,6 +36,12 @@ const HeroBanner: React.FC = () => {
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
+      sanityBnr: sanityBanner {
+        big_text
+        small_text
+        button_link
+        button_text
+      }
       sanityBG: sanityImages {
         bgImage {
           asset {
@@ -49,7 +55,7 @@ const HeroBanner: React.FC = () => {
   const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
   const backgroundImage = bgImage.childImageSharp.gatsbyImageData;
   const sanityBackground = convertToBgImage(sanityBG.bgImage.asset.gatsbyImageData);
-  console.log('Sanity BG: ', typeof sanityBackground);
+  const sanityBanner = sanityBnr;
   return (
 
     <BackgroundImage
@@ -59,12 +65,12 @@ const HeroBanner: React.FC = () => {
       className="heroBanner"
     >
       <Banner
-        title={heroBanner.title}
-        subtitle={heroBanner.subtitle}
-        content={heroBanner.content}
-        linkTo={heroBanner.linkTo}
-        linkText={heroBanner.linkText}
-        bgImg={backgroundImage}
+        title={sanityBanner.big_text}
+        // subtitle={heroBanner.subtitle}
+        content={sanityBanner.small_text}
+        linkTo={sanityBanner.button_link}
+        linkText={sanityBanner.button_text}
+      // bgImg={backgroundImage}
       />
     </BackgroundImage>
 
