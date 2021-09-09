@@ -32,7 +32,7 @@ import * as Styled from './styles';
 //   }
 // }
 interface XolaExperienceArray {
-  toursArray: [] | [any] | never[];
+  toursArray?: [] | [any] | never[];
 }
 
 
@@ -52,9 +52,10 @@ const TourInfo: React.FC<XolaExperienceArray> = ({ toursArray }) => {
         Find the perfect fit of time and destinations for you below!
       </Styled.h3>
       {
+        toursArray &&
         toursArray.map((tour) => {
           return (
-            <Styled.TourInfoItem>
+            <Styled.TourInfoItem id={`${tour.id}`}>
               <TourCard id={tour.id} name={tour.name} description={tour.desc} price={tour.price} photoLink={tour.photo.id} />
             </Styled.TourInfoItem>
           );

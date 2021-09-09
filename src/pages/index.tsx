@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
@@ -15,8 +15,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const IndexPage: React.FC = () => {
 
+
   return (
-    <Layout>
+    <Layout >
       <SEO title="North Atlanta Executive Air Service" />
 
       <HeroBanner />

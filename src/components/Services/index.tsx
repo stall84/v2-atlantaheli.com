@@ -27,7 +27,8 @@ interface SanityService {
     service_description: string;
     service_name: string;
     service_icon: IconProps;
-    service_link: string;
+    service_link?: string;
+    service_id_link: string;
   }
 }
 
@@ -61,6 +62,7 @@ const Services: React.FC = () => {
             service_icon
             service_name
             service_link
+            service_id_link
           }
         }
       }
@@ -81,14 +83,14 @@ const Services: React.FC = () => {
             id,
             service_description,
             service_icon,
-            service_link,
+            service_id_link,
             service_name
           } = item.node;
 
           return (
             <Styled.ServiceItem key={id}>
               <motion.div whileHover={{ scale: 1.10 }} whileTap={{ scale: 1.05 }} style={{ height: '100%', width: '100%' }} >
-                <InfoBlock linkTo={service_link} icon={service_icon} title={service_name} content={service_description} />
+                <InfoBlock linkTo={service_id_link} icon={service_icon} title={service_name} content={service_description} />
               </motion.div>
             </Styled.ServiceItem>
           );
